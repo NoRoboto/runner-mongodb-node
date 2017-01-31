@@ -1,4 +1,4 @@
-FROM node:4.4.5
+FROM node:6.9.4
 
 RUN apt-get update \
   && npm install -g npm \
@@ -6,4 +6,5 @@ RUN apt-get update \
   && echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list \
   && apt-get update \
   && apt-get install -y mongodb-org \
-  && npm install -g yarn
+  && npm install -g yarn \
+  && npm install -g pm2
